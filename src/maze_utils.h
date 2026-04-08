@@ -327,13 +327,12 @@ void simulateAndDisplay(char original[MAX][MAX], int rows, int cols,
             printf("Tesouro encontrado! +%d moedas.\n", valor);
             display[ny][nx] = ' ';          // treasure is consumed, remove from display
         } else if (cell == 'A') {
+            int lostCount = 0;
             if (backpack->head != NULL) {
-                int lost = backpack->head->value;
                 removeSmallest(backpack);   // lose the smallest treasure
-                printf("Armadilha! Perdeu o tesouro de valor %d.\n", lost);
-            } else {
-                printf("Armadilha! Mochila vazia, nada perdido.\n");
+                lostCount = 1;
             }
+            printf("Armadilha! Perdeu %d tesouro(s)!!!\n", lostCount);
             display[ny][nx] = ' ';          // trap is consumed
         } else if (cell == 'S') {
             // Exit reached – finish simulation and show final score
