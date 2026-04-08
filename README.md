@@ -4,7 +4,7 @@ A maze exploration game using only C language. This project was developed for a 
 ---
 
 ### 💻 Execution
-To compile and execute the application, run the following commands in your terminal:
+To compile and execute the application, run the following command in your terminal:
 
 ```bash
 ./maze
